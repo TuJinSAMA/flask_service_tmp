@@ -1,0 +1,11 @@
+# 公共 response 方法
+def res(data=None, message='Ok', success=True, code=200):
+    return {
+        'success': success,
+        'message': message,
+        'data': data,
+    }, code
+
+# datetime 转换 JSON
+def format_datatime_to_json(datetime, format='%Y-%m-%d %H:%M:%S'):
+    return datetime.strftime(format)

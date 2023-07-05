@@ -1,4 +1,6 @@
 import os
+from datetime import timedelta
+
 
 # 数据库相关配置
 # 建议在本地根目录下新建 .env 文件维护敏感信息配置项更安全 
@@ -20,9 +22,13 @@ DRIVER = 'pymysql'
 class Config(object):
     DEBUG = False
     TESTING = False
-    SECRET_KEY = os.getenv('SECRET_KEY', b'#q)\\\x00\xd6\x9f<iBQ\xd7;,\xe2E')
+    SECRET_KEY = os.getenv('SECRET_KEY')
     SQLALCHEMY_DATABASE_URI = "{}+{}://{}:{}@{}:{}/{}?charset=utf8".format(DIALECT, DRIVER, USERNAME, PASSWORD, HOSTNAME, PORT, DATABASE)
     SQLALCHEMY_ECHO = True
+    JWT_SECRET_KEY = os.getenv('JWT_SECRET_KEY')
+    JWT_ACCESS_TOKEN_EXPIRES = timedelta(hours=2)
+    JWT_REFRESH_TOKEN_EXPIRES = timedelta(days=30)
+    JWT_BLOCKLIST_TOKEN_CHECKS = ['access']
 
 class ProductionConfig(Config):
     DEBUG = False
