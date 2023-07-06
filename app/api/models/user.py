@@ -1,5 +1,6 @@
 from ..models import db
 from datetime import datetime
+from ..common.utils import format_datetime_to_json
 
 
 class UserModel(db.Model):
@@ -31,8 +32,8 @@ class UserModel(db.Model):
         return {
             "id": self.id,
             "username": self.username,
-            "created_at": self.created_at,
-            "updated_at": self.updated_at,
+            "created_at": format_datetime_to_json(self.created_at),
+            "updated_at": format_datetime_to_json(self.updated_at),
         }
 
     # 获取密码和 salt

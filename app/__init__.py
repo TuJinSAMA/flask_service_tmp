@@ -2,6 +2,7 @@ import os
 
 from flask import Flask
 from flask_jwt_extended import JWTManager
+from flask_cors import CORS
 
 from .config import config
 from .api.models import db
@@ -17,6 +18,8 @@ def create_app(config_name):
     app = Flask(__name__)
     # 加载配置项
     app.config.from_object(config[config_name])
+    # 解决跨域
+    CORS(app)
     # 初始化数据库ORM
     db.init_app(app)
     # 初始化数据库ORM迁移插件

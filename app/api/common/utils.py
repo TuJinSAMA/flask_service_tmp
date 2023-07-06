@@ -7,5 +7,5 @@ def res(data=None, message='Ok', success=True, code=200):
     }, code
 
 # datetime 转换 JSON
-def format_datatime_to_json(datetime, format='%Y-%m-%d %H:%M:%S'):
+def format_datetime_to_json(datetime, format='%Y-%m-%d %H:%M:%S'):
     return datetime.strftime(format)
