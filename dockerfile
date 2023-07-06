@@ -14,8 +14,6 @@ ENV FLASK_DEBUG=True \
     MYSQL_HOSTNAME=172.20.101.134 \
     MYSQL_PORT=3306 \
     MYSQL_DATABASE_NAME=test_db
-
-RUN flask db init
 RUN flask db migrate
 RUN flask db upgrade
 CMD ["flask", "run"]
