@@ -1,7 +1,8 @@
 # 《使用 Flask + Flask RESTful 快速搭建 API 服务》 代码仓库
 
-> 这是一个基于 [Flask](https://flask.net.cn/) 搭建的服务，遵守 RESTful API 规范
-> [使用 Flask + Flask RESTful 快速搭建 API 服务](https://juejin.cn/post/7252976055093592120) 文章中的项目代码存放于此
+> 这是一个基于 [Flask](https://flask.net.cn/) 搭建的服务，遵守 RESTful API 规范。
+> 
+> [使用 Flask + Flask RESTful 快速搭建 API 服务](https://juejin.cn/post/7252976055093592120) 文章中的项目代码存放于此。
 ## 运行项目
 
 ```bash
